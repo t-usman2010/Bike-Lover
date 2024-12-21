@@ -1,0 +1,46 @@
+table {
+  border: 2px solid transparent;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+table::before,
+table::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  animation: rgbGlow 2s infinite;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); /* Increased glow size and opacity */
+}
+
+table::before {
+  animation-delay: -1s;
+}
+
+@keyframes rgbGlow {
+  0% {
+    border: 2px solid rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); /* Red glow */
+  }
+  25% {
+    border: 2px solid rgba(0, 255, 0, 1);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Green glow */
+  }
+  50% {
+    border: 2px solid rgba(0, 0, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.7); /* Blue glow */
+  }
+  75% {
+    border: 2px solid rgba(255, 255, 0, 1);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.7); /* Yellow glow */
+  }
+  100% {
+    border: 2px solid rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); /* Red glow */
+  }
+}
